@@ -25,6 +25,7 @@ def get_args():
     parser.add_argument("--weight_bram_width", type=int, default=4096)
     parser.add_argument("--num_per_line_fp", default=256, help="weight_bram_width/16")
     parser.add_argument("--softmax_m", type=int, default=0)
+    parser.add_argument("--hardware_group_size", type=int, default=1024, help="硬件的fpw, fpb buffer一次最多存多少数据")
 
     args = parser.parse_args()
     args.pth_prefix = args.pth_pre + f"{args.layer_num}."
